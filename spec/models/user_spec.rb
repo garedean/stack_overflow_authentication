@@ -1,5 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe User do
+  it 'creates a new user' do
+    user = User.create(username: 'billy')
+    binding.pry
+    expect(user.username).to eql('billy')
+  end
+  it { should validate_presence_of :password }
+
+
+
 end
