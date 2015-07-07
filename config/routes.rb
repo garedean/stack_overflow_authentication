@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
+  root 'questions#index'
 
   resources :users, only: [:new, :create]
 
