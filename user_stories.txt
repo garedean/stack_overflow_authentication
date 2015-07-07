@@ -18,7 +18,7 @@
 
 ***DONE*** As an administrator, I want to be able to make other users administrators.
 
-As an administrator, I want to be able to delete users, if necessary.
+***DONE*** As an administrator, I want to be able to delete users, if necessary.
 
 As an administrator, I want a navbar that shows my admin options (reporting, user management).
 

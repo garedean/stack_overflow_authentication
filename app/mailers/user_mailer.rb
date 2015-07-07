@@ -4,6 +4,6 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
 
-    mail to: "garrettdolson@gmail.com", subject: "Welcome to StackAnswers!"
+    mail to: "fakeemail@nowhere.com", subject: "Welcome to StackAnswers!"
   end
 end
