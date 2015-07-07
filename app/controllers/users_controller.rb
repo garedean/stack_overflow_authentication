@@ -21,6 +21,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    Question.destroy_all(user_id: @user.id)
+    @user.destroy
+
+    binding.pry
+    redirect_to '/'
+
+  end
+
   private
 
   def user_params

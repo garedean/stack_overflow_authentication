@@ -1,0 +1,33 @@
+<h2>Admin Central</h2>
+
+<hr>
+
+<h4>All users (<%= @users.size %> total)</h4>
+
+<table class="users-list  table table-striped">
+  <thead>
+    <th class="username-column">User</th>
+    <th class="delete-column"></th>
+    <th class="admin-column">Admin</th>
+  </thead>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.username %>
+      </td>
+      <td>
+        <%= link_to 'Delete', "/users/#{user.id}", method: :delete, class: "btn btn-danger" %>
+      </td>
+      <td>
+        <% if user.admin? %>
+          Yes
+        <% else %>
+          <%= link_to "Grant", "/admin/#{user.id}", method: :patch %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<hr>

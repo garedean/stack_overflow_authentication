@@ -2,7 +2,7 @@
 @import 'bootstrap';
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
   color: white;
   background: #1D1D1D;
 }
@@ -28,8 +28,10 @@ nav {
   }
   * {
     color: #C9C3E6 !important;
-    font-size: 1.1em;
+    font-size: 1.05em;
+    line-height: 50px;
   }
+  padding-right: 15px;
 }
 
 .top-right {
@@ -62,4 +64,28 @@ nav {
   font-size: 3em;
   color: #7565C7;
   margin-top: -5px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 5px;;
+  right: 5px;
+}
+
+.users-list {
+  width: 100%;
+  th.username-column {
+    width: 70%;
+  }
+  th.edit-column,
+  th.delete-column {
+    width: 15%;
+  }
+  th.admin-column {
+    width: 15%;
+  }
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #29264D;
 }

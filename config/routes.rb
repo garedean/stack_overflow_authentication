@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'questions#index'
 
-  resources :users, only: [:new, :create]
+  resources :users
 
   resources :questions do
     resources :answers
@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy", as: 'logout'
+  get "/admin" => "admins#index", as: 'admin'
+  patch "/admin/:id" => "admins#update"
 end

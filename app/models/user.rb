@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   has_many :questions
   attr_accessor :password
   validates_confirmation_of :password
-  before_save :encrypt_password
-  validates :password, :username, :presence => true
+  before_create :encrypt_password
+  validates :username, :presence => true
+  validates :password, :presence => true, :on => :create
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
@@ -21,5 +22,9 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.welcome_email(self).deliver
+  end
+
+  def admin?
+    self.admin
   end
 end
