@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'pry'
 gem 'pry-rails'
+gem "letter_opener"
 
 
 group :development do

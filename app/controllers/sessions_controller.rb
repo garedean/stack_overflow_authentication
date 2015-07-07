@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.authenticate(params[:username], params[:password])
-    #binding.pry
+
     if @user
       session[:user_name] = @user.username
       flash[:notice] = "You have been logged in."

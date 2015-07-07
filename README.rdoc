@@ -1,5 +1,8 @@
 == README
 
+== In order for this app to have full functionality the /config/development.rb file must be updated.  In the section   `config.action_mailer.smtp_settings = ` a valid GMail username and password needs to be entered.  
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

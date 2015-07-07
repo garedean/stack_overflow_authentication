@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver
+  end
 end

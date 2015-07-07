@@ -8,8 +8,12 @@
 </head>
 <body>
 
-  <%= flash[:notice] %>
-  <%= flash[:alert] %>
+  <% if flash[:notice] %>
+    <div class="flash-wrapper">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
 
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">

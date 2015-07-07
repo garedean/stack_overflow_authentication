@@ -14,7 +14,11 @@
 
 <%= bootstrap_form_for [@question, @answer] do |f| %>
   <%= f.text_field :text %>
-  <%= f.submit %>
+  <% if current_user %>
+    <%= f.submit %>
+  <% else %>
+    <%= f.submit 'Submit', data: {confirm: 'You are not logged in. Submit answer as anonymous user?' } %>
+  <% end %>
 <% end %>
 
 <ul class="lined-list">
