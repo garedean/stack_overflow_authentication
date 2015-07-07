@@ -1,0 +1,22 @@
+<h1>Questions</h1>
+
+<%= link_to "Add a question", new_question_path, class: "btn btn-default" %>
+
+<ul class="lined-list">
+  <li>
+    <span>Question</span>
+    <span class="pull-right">Asked by</span>
+  </li>
+  <% @questions.each do |question| %>
+    <li>
+      <%= link_to question do %>
+        <span>
+          <%= question.text %>
+        </span>
+        <span class="pull-right">
+          <%= question.user.username %>
+        </span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

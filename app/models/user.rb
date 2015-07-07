@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
-  validates :password, :username, :presence => true
+  has_many :questions
   attr_accessor :password
   validates_confirmation_of :password
   before_save :encrypt_password
+  validates :password, :username, :presence => true
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt

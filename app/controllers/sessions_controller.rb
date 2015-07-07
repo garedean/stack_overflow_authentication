@@ -2,11 +2,11 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.authenticate(params[:username], params[:password])
-
+    #binding.pry
     if @user
       session[:user_name] = @user.username
       flash[:notice] = "You have been logged in."
-      redirect_to "/"
+      redirect_to questions_path
     else
       flash[:alert] = "You have not been logged in. Please try again"
       redirect_to login_path

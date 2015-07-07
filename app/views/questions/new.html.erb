@@ -1,0 +1,12 @@
+<h1>Add a new question</h1>
+
+<% if @question.errors.any? %>
+  <% @question.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<%= bootstrap_form_for @question do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>

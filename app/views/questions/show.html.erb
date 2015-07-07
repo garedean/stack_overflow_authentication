@@ -1,0 +1,28 @@
+<h1>Question Page</h1>
+
+<p>
+  <%= @question.user.username %> asked:
+</p>
+
+<p>
+  <%= @question.text %>
+</p>
+
+<hr>
+
+<h3>Answer this question</h3>
+
+<%= bootstrap_form_for [@question, @answer] do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>
+
+<ul class="lined-list">
+  <% @question.answers.each do |
+    answer| %>
+    <li>
+      <p>Answered by <%= answer.user.username %>:</p>
+      <%= answer.text %>
+    </li>
+  <% end %>
+</ul>
